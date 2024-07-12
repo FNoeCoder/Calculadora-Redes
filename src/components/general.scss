@@ -1,0 +1,48 @@
+div.general{
+    width: 50%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+button.general{
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+
+    font-size: 16px;
+    border-radius: 8px;
+    // background-color: #4C6271;
+    // color: white;
+    // border: rgb(77, 105, 122) 2px solid;
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 8px;
+}
+
+input.general{
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid grey;
+    background-color: white;
+    text-align: center;
+}
+select.general{
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid grey;
+    background-color: white;
+    text-align: center;
+    option{
+        text-align: center;
+    }
+}

@@ -1,0 +1,36 @@
+#cantidadHost{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    min-width: 300px;
+    max-width: 400px;
+    height: 70px;
+    padding: 10px 20px;
+    margin: 4px;
+    //Cuando salga del cuadro poner scroll
+    overflow-x: auto;
+    flex-wrap: wrap;
+    // background-color: red;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        margin: 2px;
+        background-color: white;
+        border-radius: 8px;
+        p{
+            padding: 5px;
+        }
+        button{
+            padding: 5px;
+            background-color: #f5f5f500;
+            border: none;
+        }
+    }
+}

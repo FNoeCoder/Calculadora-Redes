@@ -1,0 +1,57 @@
+.dialog{
+    width: 350px;
+    margin: auto;
+    padding: 30px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+
+    div.advertencia{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        p{
+            padding: 10px 0;
+            text-align: center;
+            font-size: 29px;
+            color: #3f3f3f;
+            //poner en negrita 
+            font-weight: bold;
+        }
+
+    }
+    div.contenedor_boton{
+        // padding: 5px;
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+}
+dialog{
+    animation: show 0.5s normal ease;
+}
+
+  
+@keyframes show {
+    from {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
