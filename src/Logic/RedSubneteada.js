@@ -222,4 +222,34 @@ export class RedSubneteada{
     getMascara(){
         return this.#mascara;
     }
+    getJSON(){
+        let subredes = this.getTodasLasSubredes();
+        let subredesFormateadas = subredes.map(subred => {
+            return {
+                red: subred.red.join("."),
+                broadcast: subred.broadcast.join("."),
+                limineInferior: subred.limineInferior.join("."),
+                limineSuperior: subred.limineSuperior.join("."),
+                hostDisponibles: subred.hostDisponibles,
+                mascara: subred.mascara.join("."),
+                n: subred.n
+            }
+        })
+        let objetoParaJSON = {
+            red: this.#red.getRed().join("."),
+            tipoRed: this.#tipoRed,
+            redIngresada: this.#redIngresada,
+            mascara: this.#mascara.join("."),
+            mascaraEnBinario: this.#mascaraEnBinario.join("."),
+            // hostRequeridos: this.#hostRequeridos,
+            // hostDisponibles: this.#hostDisponibles,
+            // subredesDisponibles: this.#subredesDisponibles,
+            // subredesRequeridas: this.#subredesRequeridas,
+            cantidadBits1: this.#cantidadBits1,
+            cantidadBits0: this.#cantidadBits0,
+            subredes: subredesFormateadas
+        }
+        
+        return objetoParaJSON;
+    }
 }

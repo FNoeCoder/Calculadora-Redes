@@ -20,6 +20,7 @@ export class RedMultiSubneteada{
      */
     constructor({red, listaHostRequeridos}){
         if (listaHostRequeridos.length === 0) throw new Error("La lista de host requeridos no puede estar vacia");
+        this.redIngresada = red;
         this.#red = red.split(".").map( octedo => parseInt(octedo));
         this.#listaHostRequeridos = listaHostRequeridos.sort((a, b) =>  b - a);
         this.#redesSubneteadasPorHost = this.#listaHostRequeridos.map(host => new RedSubneteada(red, {hostRequeridos: host}));
@@ -63,5 +64,31 @@ export class RedMultiSubneteada{
         }
 
         return subredes;
+    }
+    getJSON(){
+        let datosRedSubneteada1 = this.#redesSubneteadasPorHost[0].getAll();
+        
+
+        let subredes = this.getTodasLasSubredes();
+        let subredesFormateadas = subredes.map(subred => {
+            return {
+                red: subred.red.join("."),
+                broadcast: subred.broadcast.join("."),
+                limineInferior: subred.limineInferior.join("."),
+                limineSuperior: subred.limineSuperior.join("."),
+                hostDisponibles: subred.hostDisponibles,
+                mascara: subred.mascara.join("."),
+                n: subred.n
+            }
+        })
+        let objetoParaJSON = {
+            red: this.#red.join("."),
+            tipoRed: datosRedSubneteada1.tipoRed,
+            mascara: datosRedSubneteada1.mascara.join("."),
+            redIngresada: this.redIngresada,
+            mascaraEnBinario: datosRedSubneteada1.mascaraEnBinario.join("."),
+            subredes: subredesFormateadas,
+        }
+            return objetoParaJSON;
     }
 }

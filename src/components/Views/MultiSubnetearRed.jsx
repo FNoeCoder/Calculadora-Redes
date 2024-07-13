@@ -16,6 +16,7 @@ function MultiSubnetearRed() {
     const [cantidades, setCantidades] = useState([]);
     const [error, setError] = useState("");
     const [filas, setFilas] = useState([]);
+    const [datosCompletos, setDatosCompletos] = useState({});
     function EliminarCantidad(posicion){
         let nuevaLista = cantidades.filter((elemento, index) => index !== posicion);
         setCantidades(nuevaLista);
@@ -27,7 +28,6 @@ function MultiSubnetearRed() {
             setCantidades([...cantidades, cantidad]);
             document.getElementById('cantidad').value = "";
             setFilas([]);
-            //cuadno se agrega una cantida poner selecionado el input
             document.getElementById('cantidad').focus();
         }
         else{
@@ -41,10 +41,14 @@ function MultiSubnetearRed() {
             let redSubneteada = new RedMultiSubneteada({red: redSubneteo, listaHostRequeridos: cantidades});
             let subredes = redSubneteada.getTodasLasSubredes();
             setFilas(subredes);
+            setDatosCompletos(redSubneteada.getJSON());
         }
         catch(e){
+            console.log(e);
             setError(e.message);
             document.getElementById('aviso').showModal();
+            setFilas([]);
+            setDatosCompletos({});
         }
     }
     return (
@@ -68,7 +72,7 @@ function MultiSubnetearRed() {
 
 
                 <button onClick={CalcularSubneteo}>Subnetear</button>
-                {filas.length > 0 ? <Tabla datos={filas}/> : null}
+                {filas.length > 0 ? <Tabla datos={filas} datosCompletos={datosCompletos}/> : null}
                 <VentanaFlotante aviso={error} id="aviso"/>
             </VistaPrincipal>
         </>

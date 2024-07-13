@@ -1,10 +1,16 @@
-#botonDescargar {
-  width: 110px;
-  height: 50px;
-  margin: 10px;
+.BotonesDescargar {
   position: fixed;
   bottom: 50px;
   right: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+.BotonesDescargar .botonDescargar {
+  width: 110px;
+  height: 50px;
+  margin: 10px;
   font-size: 40px;
   border-radius: 8px;
   color: #4C6271;
@@ -16,7 +22,7 @@
   border-radius: 8px;
   transition: all 0.5s, color 0.5s, border 0.5s;
 }
-#botonDescargar:hover {
+.BotonesDescargar .botonDescargar:hover {
   width: 115px;
   background-color: #4C6271;
   color: white;

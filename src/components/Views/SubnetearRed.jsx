@@ -12,19 +12,20 @@ function SubnetearRed(){
     const [tipo, setTipo] = useState("1")
     const [error, setError] = useState("")
     const [filas, setFilas] = useState([])
+    const [datosCompletos, setDatosCompletos] = useState({})
 
     function onClickSubnetear(){
         try{
             let objetoSubred = tipo === "1" ? {hostRequeridos: cantidad} : {subredesRequeridas: cantidad};
             let resul = new RedSubneteada(red, objetoSubred);
-            console.log(resul.getAll());
             setFilas(resul.getTodasLasSubredes())
-            // console.log(resul.getTodasLasSubredes())
+            setDatosCompletos(resul.getJSON())
         }
         catch(e){
             setError( e.message)
             setFilas([])
             document.getElementById('aviso').showModal();
+            setDatosCompletos({})
         }
     }
 
@@ -45,7 +46,7 @@ function SubnetearRed(){
                 </div>
 
                 <button type="button" onClick={onClickSubnetear}>Subnetear</button>
-                {filas.length > 0 ? <Tabla datos={filas}/> : null}
+                {filas.length > 0 ? <Tabla datos={filas} datosCompletos={datosCompletos}/> : null}
                 <VentanaFlotante aviso={error} id="aviso"/> 
             </VistaPrincipal> 
         </>

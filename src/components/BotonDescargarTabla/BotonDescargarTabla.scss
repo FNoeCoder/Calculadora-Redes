@@ -1,31 +1,44 @@
-#botonDescargar{
-    width: 110px;
-    height: 50px;
-    margin: 10px;
-    //Poner en floante en la parte inferior derecha de la pantalla
+
+.BotonesDescargar{
+    // poner en la parte inferior derecha de la pantalla flotante 
     position: fixed;
     bottom: 50px;
     right: 50px;
-    font-size: 40px;
-    border-radius: 8px;
-    color: #4C6271;
-    //poner negritas
-    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    // height: 100vh;
+    .botonDescargar{
+        width: 110px;
+        height: 50px;
+        margin: 10px;
+        //Poner en floante en la parte inferior derecha de la pantalla
+        // position: fixed;
+        // bottom: 50px;
+        // right: 50px;
+        font-size: 40px;
+        border-radius: 8px;
+        color: #4C6271;
+        //poner negritas
+        font-weight: bold;
 
 
-    font-size: 18px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.582);
-    // color: white;
-    // border: rgb(77, 105, 122) 2px solid;
-    border: 2px solid #4C6271;
-    border-radius: 8px;
-    transition: all 0.5s, color 0.5s, border 0.5s;
+        font-size: 18px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.582);
+        // color: white;
+        // border: rgb(77, 105, 122) 2px solid;
+        border: 2px solid #4C6271;
+        border-radius: 8px;
+        transition: all 0.5s, color 0.5s, border 0.5s;
 
-    &:hover{
-        width: 115px;
-        background-color: #4C6271;
-        color: white;
-        border: 3px solid #4C6271;
-    }
+        &:hover{
+            width: 115px;
+            background-color: #4C6271;
+            color: white;
+            border: 3px solid #4C6271;
+        }
+    }    
 }
+

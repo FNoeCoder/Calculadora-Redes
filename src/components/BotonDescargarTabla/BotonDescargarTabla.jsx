@@ -51,7 +51,7 @@ function BotonDescargarTabla({nombreArchivo}){
         document.body.removeChild(enlaceDescarga);
     }
     return (
-        <button id="botonDescargar" onClick={DescargarTabla}>Descargar</button>
+        <button className="botonDescargar" onClick={DescargarTabla}>Descargar CSV</button>
     )
 }
 

@@ -1,7 +1,9 @@
 import Fila from "./Fila";
 import BotonDescargarTabla from '../BotonDescargarTabla/BotonDescargarTabla';
+import BotonDescargarJSON from '../BotonDescargarTabla/BotonDescargarJSON';
 
-function Tabla({datos}){
+
+function Tabla({datos, datosCompletos}) {
     return (
         <div className="tabla">
             <table id="miTabla">
@@ -20,7 +22,11 @@ function Tabla({datos}){
                     {datos.map((datosFila) => <Fila datosFila={datosFila} key={datosFila.n}/>)}
                 </tbody>
             </table>
-            <BotonDescargarTabla nombreArchivo={`${datos[0].red.join(".")}_subteneada`}/>
+            <div className="BotonesDescargar">
+                <BotonDescargarTabla nombreArchivo={`${datos[0].red.join(".")}_subteneada`}/>
+                <BotonDescargarJSON nombreArchivo={`${datos[0].red.join(".")}_subteneada`} datosCompletos={datosCompletos}/>            
+            </div>
+
         </div>
     )
 
