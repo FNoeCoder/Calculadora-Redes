@@ -1,6 +1,7 @@
 {
   "name": "calculadora-redes",
   "private": true,
+  "homepage": "https://fnoecoder.github.io/Calculadora-Redes/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

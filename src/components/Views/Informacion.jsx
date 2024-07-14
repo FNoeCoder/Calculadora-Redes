@@ -1,7 +1,7 @@
 import BarraLateral from '../BarraLateral/BarraLateral';
 import VistaPrincipal from '../VistaPrincipal/VistaPrincipal';
 
-function Información(){
+function Informacion(){
     return (
         <>
             <BarraLateral paginaActual={"Información"}/>
@@ -10,4 +10,4 @@ function Información(){
     )
 }
 
-export default Información;
+export default Informacion;

@@ -76,7 +76,7 @@ function TablaVertical({datos}){
             </tr>
             </tbody>
         </table>
-        {/* <BotonDescargarTabla nombreArchivo={`${datos.red.join(".")}_desglozada`} /> */}
+        <BotonDescargarTabla nombreArchivo={`${datos.red.join(".")}_desglozada`} />
         </div>
     )
 }
